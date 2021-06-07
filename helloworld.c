@@ -2,6 +2,6 @@
 
 int main()
 {
-	pintf("Hello world\n");
+	pintf("Hello world\n"); /*This is message*/
 	return 0;
 }
