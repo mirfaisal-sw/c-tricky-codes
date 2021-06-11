@@ -1,0 +1,73 @@
+
+Question - Tell me if following line of code is valid and if so then what's the output?
+-------------------------------------------------------------------------------------------
+
+Code - 
+
+mystrlen.c:-
+
+#include <stdio.h>
+
+int main()
+{
+        char *str = "Deep";
+        str[1] = 1;
+
+        printf("%s\n",str);
+
+        return 0;
+}
+
+=========================================================
+Compile and run:- 
+gcc mystrlen.c -o mystrlen
+./mystrlen
+Output:- Segmentation fault (core dumped)
+=========================================================
+
+
+
+==================================================================================================
+Reason - This segment fault occured because "Deep" is a string literal, which is stored in .rodata 
+section of executable binary "mystrlen".
+Proof: Using objdump tool we can see that string constant "Deep" is really in .rodata section.
+
+km@km-VirtualBox:~/c-tricky-codes$ objdump -s -j .rodata mystrlen
+
+mystrlen:     file format elf64-x86-64
+
+Contents of section .rodata:
+ 06f0 01000200 44656570 00                 ....Deep. 
+==================================================================================================
+
+
+
+==================================================================================================
+Further explanation:
+
+String constant/string literal
+------------------------------
+1. A string constant is a sequence of characters enclose in double quotes, and is also called string literal.
+
+2. char *ptr = "Deep";
+   Space is allocated for pointer variable ptr, string constant "Deep" is stored separately in memory and the 
+   pointer variable ptr is initialized with the starting address of "Deep".
+   
+3. The string constant "Deep" is actually a pointer to the character 'D'. So whenever a string constant is used
+   in the program it is replaced by a pointer pointing to the string.
+   Example : -
+   char *p = "Deep";
+   
+   printf("%c\n",*p);
+   O/p - D
+   
+   printf("%c\n","Deep[3]);
+   O/p - p
+   
+4. Exception:-
+   When the string constant is used as an initializer for a character array, then it does not represent any 
+   address and it is not stored anywhere in memory.
+   Example - 
+   char arr[] = "Deep";
+
+======================================================================================================
