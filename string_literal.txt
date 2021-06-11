@@ -61,7 +61,7 @@ String constant/string literal
    printf("%c\n",*p);
    O/p - D
    
-   printf("%c\n","Deep[3]);
+   printf("%c\n","Deep"[3]);
    O/p - p
    
 4. Exception:-
