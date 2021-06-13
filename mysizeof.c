@@ -1,3 +1,13 @@
+/****************************************************************************************
+ *Question: - Implement your own sizeof function.					*
+ ****************************************************************************************/
+
+/****************************************************************************************
+* This program uses the concept of poiner arithmetic i.e. for ex. let ptr be pointer to *
+* to an integer and say ptr is holding the address 0x100, then ptr + 1 = 0x104          *
+*****************************************************************************************/
+
+#include <stdio.h>
 #define MY_SIZEOF(x)	((void *)(&x + 1) - (void *)(&x)) 
 
 int main()
