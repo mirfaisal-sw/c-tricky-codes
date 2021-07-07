@@ -1,6 +1,5 @@
 /******************************************************************************
-
-Interview Question - Thales India
+Interview Question - Thales India July 2021
 Question -  Write a program to create two threads to print even number in one 
 thread and odd number in other thread.
 *******************************************************************************/
