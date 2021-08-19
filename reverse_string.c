@@ -18,13 +18,11 @@ char *reverseString(char *buf)
 	
 		buf[str_len - i - 1] = buf[str_len - i -1] + buf[i];
 		buf[i] = buf[str_len - i - 1] - buf[i];
-	        buf[str_len - i - 1] -= buf[i];		
+	        buf[str_len - i - 1] = buf[str_len - i - 1] - buf[i];		
 
 	}
 
 	memcpy(dyn_buf,buf,str_len);
-
-	//out_buf = dyn_buf;
 
 	return dyn_buf;
 }
