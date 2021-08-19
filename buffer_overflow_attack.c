@@ -74,7 +74,7 @@ int main(void)
  * good programming practices. For example:
  *
  *       a. Make sure that the memory auditing is done properly in the program using utilities 
- *          like valgrind memcheck
+ *          like valgrind memcheck.
  *       b. Use fgets() instead of gets().
  *       c. Use strncmp() instead of strcmp(), strncpy() instead of strcpy() and so on.
  *
