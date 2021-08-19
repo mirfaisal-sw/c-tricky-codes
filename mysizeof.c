@@ -8,7 +8,7 @@
 *****************************************************************************************/
 
 #include <stdio.h>
-#define MY_SIZEOF(x)	((void *)(&x + 1) - (void *)(&x)) 
+#define MY_SIZEOF(x)	((char *)(&x + 1) - (char *)(&x)) 
 
 int main()
 {
