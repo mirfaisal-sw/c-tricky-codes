@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdint.h>
 
-
-
 uint8_t swapNibble(uint8_t number)
 {
     number = ( ((number & 0xF0) >> 4) | ((number & 0x0F) << 4) );
