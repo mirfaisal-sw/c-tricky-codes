@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <string.h>
+
+int my_strcmp(const char* A, const char *B)
+{
+    int i,j;
+    for(i = 0,j=0;A[i] != '\0' && B[j] != '\0';i++,j++)
+    {
+        if(A[i] != B[j])
+            break;
+    }
+    
+    if(A[i] == B[j]){
+        printf("Equal\n");
+        return 0;
+    }
+    else if(A[i] < B[j]){
+        printf("Smaller\n");
+        return (A[i] - B[i]);
+    }
+    else{
+        printf("Greater\n");
+        return (A[i] - B[i]);
+    }
+    
+}
+
+int main()
+{
+    char A[] = "Painter"; 
+    char B[] = "Painting";
+    
+    printf("strcmp result - %d\n", my_strcmp(A,B));
+    
+    return 0;
+}
+/**********************************************************
+Output - 
+Smaller
+strcmp result = -4
+***********************************************************/
