@@ -1,0 +1,57 @@
+
+
+1) A function whose return type is void, can simply use "return;"
+   statement without any value.
+   Example: -
+   void cs_assert(struct driver_data *drv_data)
+   {
+        struct chip_data *chip =
+                spi_get_ctldata(drv_data->master->cur_msg->spi);
+
+        if (drv_data->ssp_type == CE4100_SSP) {
+                pxa2xx_spi_write(drv_data, SSSR, chip->frm);
+                return;
+        }
+        
+        .......
+        .......        
+  }
+  
+  2) Working of goto label: -
+  Example: -
+  
+  #include <stdio.h>
+  #include <stdint.h>
+
+  int a;
+
+  int main()
+  {
+        a = 4;
+        printf("Value of a = %d\n", a);
+
+        if(a > 5)
+                goto err;
+
+        printf("this test goto label\n");
+  err:
+        printf("a is greater than 5\n");
+
+        return 0;
+  }
+  
+  Output: - 
+  Value of a = 4
+  this test goto label
+  a is greater than 5
+  
+  [So, here point to note is that printf() statement in "err" label is also
+  printed.]
+  
+  If in above example, we set a = 6, then output will be as below: -
+  Value of a = 6
+  a is greater than 5
+  
+  3) 
+  
+  4) 
