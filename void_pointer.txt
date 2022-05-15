@@ -1,0 +1,63 @@
+/*========================================================================
+ * Void Pointer in C                                                     *
+ *=======================================================================*/
+ 
+ => The void pointer in C is a pointer which is not associated with any data types.
+    A void pointer can hold address of any data type.
+    
+    void *p;
+    int a = 10;
+    char b = 'x';
+  
+    p = &a;  // void pointer holds address of int 'a'
+    p = &b; // void pointer holds address of char 'b'
+    
+ => void pointer can be assigned to any other type of pointer.
+    For example, void *a;
+                 int *p = a;
+                 
+    Example 2, As we know that return type of malloc function is void*. Declaration of
+    malloc() is - void *malloc(size_t size).
+    So, as return type is void*, malloc function can be used to allocate memory for any 
+    data type.
+    For example, int *x = malloc(sizeof(int) * n);
+    
+    Interesting facts about void* pointer: -
+    ----------------------------------------
+    1.) void pointers cannot be dereferenced. For example the following program doesn’t compile.
+    
+    #include<stdio.h>
+    int main()
+    {
+	      int a = 10;
+	      void *ptr = &a;
+	      printf("%d", *ptr);
+	      return 0;
+    }
+    
+    Output:
+    Compiler Error: 'void*' is not a pointer-to-object type 
+
+    2.) The C standard doesn’t allow pointer arithmetic with void pointers. However, in GNU C it is
+    allowed by considering the size of void is 1. For example the following program compiles and runs
+    fine in gcc.
+
+    #include<stdio.h>
+    int main()
+    {
+        int a[2] = {1, 2};
+        void *ptr = &a;
+        ptr = ptr + sizeof(int);
+        printf("%d", *(int *)ptr);
+        return 0;
+    }
+    Output:
+    2
+
+
+    
+    
+    
+    
+    
+ 
