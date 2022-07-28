@@ -1,0 +1,5 @@
+
+
+## is usued to concatenate two macros in c-preprocessor.
+
+Example: #define f(g,g2) g##g2
