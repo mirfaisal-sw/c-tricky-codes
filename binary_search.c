@@ -5,7 +5,7 @@ int A[] = {11,10,5,32,9,6,5,43,2,76};
 /*
 l - lowest index, h - high index
 */
-int binarySearch(int l,int h,int key)
+int binarySearch(int l, int h, int key)
 {
     int mid;
     
@@ -15,8 +15,8 @@ int binarySearch(int l,int h,int key)
     
         if(key == A[mid])
             return mid;
-        else if(key < A[mid])
-            h = A[mid -1];
+        else if (key < A[mid])
+            h = A[mid - 1];
         else
             l = A[mid + 1];
     }
@@ -26,8 +26,7 @@ int binarySearch(int l,int h,int key)
 
 int main()
 {
-    printf("Index of key 43 is - %d\n",binarySearch(0,9,43));
-
+    printf("Index of key 43 is - %d\n",binarySearch(0, 9, 43));
     return 0;
 }
 
