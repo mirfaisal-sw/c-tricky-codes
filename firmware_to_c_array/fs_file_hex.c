@@ -20,13 +20,13 @@ int main()
     source = fopen("mir.bin", "rb"); //open file for reading
     
     fseek(source,0,SEEK_END);
-    uiSize = ftell(source);
-    fseek(source,0,SEEK_SET);  //Determine the size of file
+    uiSize = ftell(source); //Determine the size of file
+    fseek(source,0,SEEK_SET);  
     printf("%d\n",uiSize);
     
     gptrString = malloc(uiSize);
     
-    uiRead = (unsigned int)fread(gptrString,1,uiSize,source);
+    uiRead = (unsigned int)fread(gptrString, 1, uiSize, source);
     fclose(source);
     
     dest = fopen("sunny","wb");
@@ -37,15 +37,15 @@ int main()
     {
         if(uiLoop == uiSize -1)
         {
-        uiRetcode = fprintf(dest, "0x%02x }; ", (unsigned char)gptrString[uiLoop]);
-        break;
+        	uiRetcode = fprintf(dest, "0x%02x }; ", (unsigned char)gptrString[uiLoop]);
+        	break;
         }
         
         uiRetcode = fprintf(dest, "0x%02x,  ", (unsigned char)gptrString[uiLoop]);
         
         if((uiLoop%10) == 0) 
         { 
-         uiRetcode =   fprintf(dest, "\r\n   ");
+         	uiRetcode =   fprintf(dest, "\r\n   ");
         }
     }   
   //   fprintf(dest, "} ");       
