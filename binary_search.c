@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int A[] = {11,10,5,32,9,6,5,43,2,76};
+int A[] = {11, 10, 5, 32,9 ,6 ,5 ,43 ,2 ,76};
 
 /*
  * l - lowest index, h - high index
