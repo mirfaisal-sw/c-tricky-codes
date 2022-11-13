@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-int A[] = {11, 10, 5, 32, 9 ,6 ,5 ,43 ,2 ,76};
+/*Array should be sorted.*/
+int A[] = {2, 5, 6, 9, 10, 11, 32, 43, 76}; 
 
 /*
  * l - lowest index, h - high index
