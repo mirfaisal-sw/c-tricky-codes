@@ -21,6 +21,18 @@
     So, as return type is void*, malloc function can be used to allocate memory for any 
     data type.
     For example, int *x = malloc(sizeof(int) * n);
+  
+  => We have to typecast a void pointer to a certain data type, to derefernce. 
+     Example: -
+     int main() {
+     	short int a = 0x3322;
+    	void *ptr = &a;
+    
+    	ptr++; /*GNU c compiler considers void pointer size as 1*/
+    	printf("Value of MSB = %x\n", *((char*)ptr));
+    	return 0;
+     }
+     Output: - 33
     
     Interesting facts about void* pointer: -
     ----------------------------------------
@@ -54,6 +66,21 @@
     Output:
     2
 
+    3.) Copying and reading data using void pointer: -
+    int main() {
+    void *p = malloc(4);
+
+	((uint8_t *)p)[0] = 0xC0;
+	((uint8_t *)p)[1] = 0xA8;
+	((uint8_t *)p)[2] = 0x0;
+	((uint8_t *)p)[3] = 0x14;
+
+	printf("%x, %x, %x, %x\n", ((uint8_t *)p)[0], ((uint8_t *)p)[1], ((uint8_t *)p)[2], ((uint8_t *)p)[3]);
+
+	return 0;
+    }
+    Output: 
+    c0, a8, 0, 14
 
     
     
