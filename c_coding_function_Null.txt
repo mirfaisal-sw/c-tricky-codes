@@ -1,0 +1,30 @@
+We can use functions definition with some conditional compilation macro using #ifdef. We can 
+keep functions definition under #ifdef. In #else we can deifine functrions symbol as NULL.
+It is explained as below.
+
+#ifdef CONFIG_PM
+
+static int my_suspend_function (struct device *dev)
+{
+        struct my_pcie *my_pcie = dev_get_drvdata(dev);
+
+        if (my_pcie->state == STATE_LINK_DOWN) {
+                dev_info(dev, "[%s] PCIe interface controls PCIe link %d\n",
+                        __func__, my_pcie->ch_num);
+                my_pcie->s2r_if_control = true;
+        } 
+        .....
+        .....
+
+        return 0;
+}
+
+#else 
+#define my_suspend_function       NULL
+#endif
+
+
+Result: - 
+----------
+If macro CONFIG_PM is disabled and if the function my_suspend_function() is used in code, then to avoid compilation error or symbol 
+resolve error at run time, we can define this functions symbol "my_suspend_function" as NULL.
