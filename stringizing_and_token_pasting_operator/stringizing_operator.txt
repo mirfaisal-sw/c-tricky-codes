@@ -1,0 +1,24 @@
+
+Stringizing operator (#)
+==========================
+ The # operator, which is generally called the stringize operator, turns the argument it precedes into a quoted string.
+ 
+Example 1: - 
+-------------
+#include <stdio.h>  
+#define PrintExpr(x) (printf("%s = %d\n", #x, (x)))
+#define UART_PIN        12
+
+int main(int argc, char **argv)
+{
+	   PrintExpr(2+2);
+     PrintExpr(UART_PIN);
+	   return 0;
+}
+
+Output - 
+  2+2 = 4
+  UART_PIN = 12
+Explanation -
+  if we use #x, then it is considered as string. The argument x is 2+2, so #x will consider it as string.
+  
