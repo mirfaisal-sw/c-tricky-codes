@@ -3,6 +3,7 @@
 
 void fillBuffer(char **ptr)
 {
+	/*string copy*/
 	strcpy(*ptr,"Hello world");
 }
 
