@@ -5,8 +5,7 @@ int main()
 {
         char *str = "Hello world";
         char **ptr;
-
-		ptr = &str;
+	ptr = &str;
     
         printf("Address of str - %p\n", str);
         printf("Address of *ptr - %p\n", *ptr);
