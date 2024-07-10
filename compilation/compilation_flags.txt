@@ -7,7 +7,7 @@ Search Path and Library Linking Flags
 =======================================
 
 	-l[linalg]
-		=> Links to shared library or shared object - Specifically, it links to linalg.dll on Windows, liblinalg.so (on Unix-like oses like Linux, BSD, AIX, …) or linalg.dylib 
+		=> Links to shared library or shared object - Specifically, it links to linalg.dll on Windows, liblinalg.so (on Unix-like OSes like Linux, BSD, AIX, …) or linalg.dylib 
 		on MacOSX.
 		
 	-L[/path/to/shared-libraries]
