@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+typedef int (*func_ptr_t)(int, int);
+
+int sum(int a, int b)
+{
+    return (a+b);
+}
+
+int difference(int a, int b)
+{
+    return (a-b);
+}
+
+int main()
+{
+    func_ptr_t fp1, fp2;
+    
+    fp1 = sum;
+    fp2 = difference;
+    
+    int x = fp1(5, 3);
+    int y = fp2(5, 3);
+    
+    
+    printf("x - %d, y - %d\n", x, y);
+    
+    return 0;
+}
+
+/* x - 8, y - 2*/
