@@ -1,0 +1,19 @@
+
+#include <stdio.h>
+
+#define SET_CLR(num,set_pos,clr_pos) \
+        do { \
+            num  |= (1 << set_pos); \
+            num  &= ~(1 << clr_pos); \
+        } while(0)
+         
+
+int main()
+{
+    int x = 0xfb;
+    SET_CLR(x, 2, 3);
+    
+    printf("%x\n", x);
+    return 0;
+}
+/*O/p - 0xf7*/
