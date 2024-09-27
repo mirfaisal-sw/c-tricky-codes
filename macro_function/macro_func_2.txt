@@ -1,0 +1,27 @@
+
+
+/*Define a macro SWAP(a, b) that swaps two variables without using a temporary variable.*/
+
+#include <stdio.h>
+
+#define SWAP(a,b)   \
+                    do { \
+                     (a) = (a+b); \
+                     (b) = (a-b); \
+                     (a) = (a-b); \
+                    } while(0)
+                
+int main()
+{
+    int x = 3;
+    int y = 4;
+    
+    SWAP(x,y);
+    
+    printf("x - %d, y - %d\n", x, y);
+    
+    return 0;
+}
+
+/*O/p - 
+x - 4, y - 3 */
