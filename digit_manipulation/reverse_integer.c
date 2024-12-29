@@ -4,11 +4,21 @@
 int reverse_digits(int n) 
 {
     int rev_num = 0;
+    int flag = 0;
+    
+    /*If number is negative*/
+    if(x < 0) {
+        x = x*(-1);
+        flag = 1;
+    }
     
     while (n > 0) {
         rev_num = rev_num * 10 + n % 10;
         n = n / 10;
     }
+
+    if(flag)
+        rev_num = (-1)*rev_num;
     
     return rev_num;
 }
