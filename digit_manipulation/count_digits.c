@@ -1,7 +1,6 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <math.h>
 
 /* find number of digits in an integer */
 int digits_in_integer(int num)
