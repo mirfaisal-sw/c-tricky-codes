@@ -52,7 +52,7 @@ char* reverseWords(char* str)
 
 int main()
 {
-    char str[100], *reverse;
+    char str[MAX_SIZE], *reverse;
     int len, i, index, wordStart, wordEnd;
 
     printf("Enter any string: ");
